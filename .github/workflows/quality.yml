@@ -1,0 +1,25 @@
+name: repository-quality
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate notebook JSON
+        run: python -m json.tool 'Previsão_preço_carros_PHV.ipynb' > /dev/null
+      - name: Validate dataset
+        run: |
+          python - <<'PY'
+          import csv
+          with open('CarPrice_Assignment.csv', newline='', encoding='utf-8') as f:
+              rows = list(csv.reader(f))
+          if len(rows) < 2:
+              raise SystemExit('Dataset is empty or missing rows')
+          PY
