@@ -23,9 +23,9 @@ These values are retained as results of the original notebook execution; they sh
 
 ```text
 .
-├── Previsão_preço_carros_PHV.ipynb  # original modeling notebook
-├── CarPrice_Assignment.csv            # dataset
-├── requirements.txt                   # reproducibility dependencies
+├── car_price_regression.ipynb       # modeling notebook
+├── CarPrice_Assignment.csv           # dataset
+├── requirements.txt                  # reproducibility dependencies
 └── .github/workflows/quality.yml      # lightweight validation
 ```
 
@@ -51,7 +51,7 @@ Regression metrics
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-jupyter notebook 'Previsão_preço_carros_PHV.ipynb'
+jupyter notebook car_price_regression.ipynb
 ```
 
 ## What this project demonstrates
