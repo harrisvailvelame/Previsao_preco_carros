@@ -1,40 +1,71 @@
-# Previsão de Preços de Carros com Regressão Linear 📈
+# Car Price Regression — Historical ML Project
 
-Olá pessoal! 👋
+> Historical Data Science project preserved as part of my technical progression. My current portfolio focus is Data Engineering and cloud data platforms.
 
-Estou entusiasmado em compartilhar meu projeto recente de modelagem preditiva, onde explorei a aplicação de regressão linear para prever preços de carros com base em características específicas.
+## Overview
 
-![Imagem do Projeto](https://i.ibb.co/F0gCFQk/Previs-o-de-Pre-os-de-Carros.jpg)
+This repository explores regression modeling for vehicle prices using structured automotive attributes from `CarPrice_Assignment.csv`.
 
-## Objetivo do Projeto
+The original notebook evaluates a linear-regression workflow and reports the following cross-validation metrics from that experiment:
 
-O principal objetivo deste projeto foi desenvolver um modelo preditivo robusto que pudesse estimar os preços de carros com base em uma série de características. A regressão linear foi a escolha ideal para essa tarefa, pois nos permitiu entender as relações lineares entre as variáveis.
+| Metric | Reported value |
+|---|---:|
+| MAE | 0.2569 |
+| MSE | 0.1527 |
+| RMSE | 0.3695 |
+| R² | 0.8163 |
+| RMSLE | 0.1839 |
+| MAPE | 1.3264 |
 
-## Resultados do Modelo
+These values are retained as results of the original notebook execution; they should not be interpreted as a production benchmark without reproducing the full preprocessing and validation pipeline.
 
-Ao longo do projeto, avaliamos o desempenho do modelo usando métricas cruciais, como Erro Absoluto Médio (MAE), Erro Quadrático Médio (MSE), Raiz do Erro Quadrático Médio (RMSE), Coeficiente de Determinação (R2), RMSLE e MAPE. Essas métricas forneceram insights valiosos sobre a capacidade do modelo de generalizar para novos dados.
+## Repository structure
 
-### Métricas de Desempenho (Validação Cruzada)
+```text
+.
+├── Previsão_preço_carros_PHV.ipynb  # original modeling notebook
+├── CarPrice_Assignment.csv            # dataset
+├── requirements.txt                   # reproducibility dependencies
+└── .github/workflows/quality.yml      # lightweight validation
+```
 
-- MAE: 0.2569
-- MSE: 0.1527
-- RMSE: 0.3695
-- R2: 0.8163
-- RMSLE: 0.1839
-- MAPE: 1.3264
+## Workflow
 
-## Avaliação do Processo de Tunagem do Modelo
+```text
+Raw tabular data
+   ↓
+EDA and preprocessing
+   ↓
+Feature preparation
+   ↓
+Linear regression
+   ↓
+Cross-validation
+   ↓
+Regression metrics
+```
 
-Realizamos uma etapa de tunagem do modelo, explorando diferentes combinações de hiperparâmetros para otimizar ainda mais o desempenho da regressão linear.
+## Reproduce locally
 
-## Ferramentas Utilizadas
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+jupyter notebook 'Previsão_preço_carros_PHV.ipynb'
+```
 
-- Linguagem de Programação: Python
-- Bibliotecas Principais: pandas, scikit-learn, seaborn, matplotlib
-- Ambiente de Desenvolvimento: Jupyter Notebook
+## What this project demonstrates
 
-## Próximos Passos
+- regression modeling with scikit-learn;
+- feature analysis and tabular preprocessing;
+- cross-validation and multi-metric evaluation;
+- exploratory analysis with Pandas, Matplotlib and Seaborn.
 
-O projeto forneceu uma base sólida, mas sempre há espaço para melhorias. Planejo explorar outras técnicas de modelagem, como regressão polinomial e modelos de machine learning mais avançados, para ver como eles se comparam ao modelo linear.
+## Portfolio context
 
-Se você estiver interessado em mais detalhes ou quiser discutir as nuances do projeto, ficarei feliz em compartilhar mais informações. Acredito que o aprendizado contínuo é a chave para aprimorar nossas habilidades de ciência de dados. 🚀
+For current engineering work, see [`harrisvailvelame/pedrohvel`](https://github.com/harrisvailvelame/pedrohvel), including tested Medallion and dbt reference implementations.
+
+---
+
+**Author:** Harrison Grant Vail  
+[LinkedIn](https://www.linkedin.com/in/harrison-grant-vail) · [GitHub](https://github.com/harrisvailvelame)
