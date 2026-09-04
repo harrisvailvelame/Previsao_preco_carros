@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate notebook JSON
-        run: python -m json.tool 'Previsão_preço_carros_PHV.ipynb' > /dev/null
+        run: python -m json.tool car_price_regression.ipynb > /dev/null
       - name: Validate dataset
         run: |
           python - <<'PY'
